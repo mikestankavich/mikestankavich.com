@@ -22,6 +22,10 @@ jobs:
           # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
         # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
+      # Copy routes.json to the dist directory
+      - name: Copy routes.json to dist
+        run: cp _routes.json dist/
+
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
