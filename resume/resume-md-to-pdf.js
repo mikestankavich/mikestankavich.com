@@ -7,7 +7,7 @@ const basePath = process.env.HOME ?
   path.join(process.env.HOME, 'mikestankavich.com') :
   path.resolve('./mikestankavich.com');
 
-const basename = 'mike-stankavich-resume';
+const basename = 'mike-stankavich-resume-pdo';
 const style = path.join(basePath, 'resume', 'resume-style.css');
 const input = path.join(basePath, 'resume', `${basename}.md`);
 const output = path.join(basePath, 'public', `${basename}.pdf`);
