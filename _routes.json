@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/downloads/*"
+  ],
+  "routes": [
+    {
+      "pattern": "/downloads/*",
+      "content": {
+        "proxied": {
+          "origin": "mikestankavich-downloads.r2.dev"
+        }
+      }
+    }
+  ]
+}
