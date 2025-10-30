@@ -1,6 +1,6 @@
 {
 	"name": "astro-resume-01",
-	"packageManager": "pnpm@8.x.x",
+	"packageManager": "pnpm@10.20.0",
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
@@ -9,7 +9,7 @@
 		"build": "astro check && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"lint": "echo '⚠️  Full linting deferred to code-cleanup spec (see spec/active/code-cleanup/)' && prettier --check \"src/components/Card.astro\"",
+		"lint": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,svelte,astro}\"",
 		"pdfresume": "node resume/pdf-resume"
 	},
 	"dependencies": {
@@ -43,10 +43,6 @@
 	"devDependencies": {
 		"@tailwindcss/aspect-ratio": "0.4.2",
 		"@tailwindcss/typography": "0.5.13",
-		"@typescript-eslint/parser": "7.8.0",
-		"eslint": "8.57.0",
-		"eslint-plugin-astro": "0.34.0",
-		"eslint-plugin-jsx-a11y": "6.8.0",
 		"prettier": "3.2.5",
 		"prettier-config-standard": "7.0.0",
 		"prettier-plugin-astro": "0.13.0",

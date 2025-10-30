@@ -15,30 +15,57 @@ import data from '../data.yaml';
 	<Image
 		src={portrait}
 		alt="profile photo"
-		class="bg-accent-200 z-10 h-56 w-auto rounded-3xl p-1"
+		class="z-10 h-56 w-auto rounded-3xl bg-accent-200 p-1"
 		loading="lazy"
 	/>
 
-	<Card class="bg-background-tertiary mt-[-6rem] w-full max-w-[400px] p-5">
+	<Card class="mt-[-6rem] w-full max-w-[400px] bg-background-tertiary p-5">
 		<div class="flex flex-col items-center gap-y-4 pb-10 pt-24">
 			<h1 class="text-3xl font-bold text-secondary-foreground">{data.name}</h1>
 			<h2 class="text-xl text-secondary-foreground">{data.position}</h2>
 
 			<div class="flex flex-row gap-x-4 pb-3 pt-1">
-				<a href={data.github} target="_blank" aria-label="github"><IconWrapper href="https://github.com" icon="github" classIcon="h-5 w-5" class="bg-accent-200" /></a>
-				<a href={data.linkedin} target="_blank" aria-label="linkedin"><IconWrapper href="https://linkedin.com" icon="linkedin" classIcon="h-5 w-5" class="bg-accent-200" /></a>
-				<a href={data.twitter} target="_blank" aria-label="twitter"><IconWrapper href="https://twitter.com" icon="twitter" classIcon="h-5 w-5" class="bg-accent-200" /></a>
-				<a href="/rss.xml" target="_blank" aria-label="rss"><IconWrapper href="/rss.xml" icon="rss" classIcon="h-5 w-5" class="bg-accent-200" /></a>
+				<a href={data.github} target="_blank" aria-label="github"
+					><IconWrapper
+						href="https://github.com"
+						icon="github"
+						classIcon="h-5 w-5"
+						class="bg-accent-200"
+					/></a
+				>
+				<a href={data.linkedin} target="_blank" aria-label="linkedin"
+					><IconWrapper
+						href="https://linkedin.com"
+						icon="linkedin"
+						classIcon="h-5 w-5"
+						class="bg-accent-200"
+					/></a
+				>
+				<a href={data.twitter} target="_blank" aria-label="twitter"
+					><IconWrapper
+						href="https://twitter.com"
+						icon="twitter"
+						classIcon="h-5 w-5"
+						class="bg-accent-200"
+					/></a
+				>
+				<a href="/rss.xml" target="_blank" aria-label="rss"
+					><IconWrapper href="/rss.xml" icon="rss" classIcon="h-5 w-5" class="bg-accent-200" /></a
+				>
 			</div>
 			<Card
-				class="bg-background-secondary flex w-full flex-col gap-x-7 gap-y-1 p-5 text-secondary-foreground"
+				class="flex w-full flex-col gap-x-7 gap-y-1 bg-background-secondary p-5 text-secondary-foreground"
 			>
 				<a href="https://calendly.com/mike-stankavich/30min" target="_blank" aria-label="">
-  				<IconText title="Schedule a Call" subTitle="Calendly" icon="phone" />
+					<IconText title="Schedule a Call" subTitle="Calendly" icon="phone" />
 				</a>
 				<div class="border-t border-border"></div>
-				<a href="mailto:%6D%69%6B%65%40%73%74%61%6E%6B%61%76%69%63%68%2E%63%6F%6D" target="_blank" aria-label="">
-				  <IconTextEmail title="Send a Message" subTitle="mike@stankavich.com" icon="mail" />
+				<a
+					href="mailto:%6D%69%6B%65%40%73%74%61%6E%6B%61%76%69%63%68%2E%63%6F%6D"
+					target="_blank"
+					aria-label=""
+				>
+					<IconTextEmail title="Send a Message" subTitle="mike@stankavich.com" icon="mail" />
 
 					<!--todo: get contact form modal working-->
 					<!--<Modal id="myAwesomeModal" ariaLabel="Share on social" btnCloseAriaLabel="Close Modal">-->
@@ -57,7 +84,6 @@ import data from '../data.yaml';
 
 					<!--	<div slot="modal-footer">Modal Footer</div>-->
 					<!--</Modal>-->
-
 				</a>
 				<div class="border-t border-border"></div>
 
@@ -70,7 +96,7 @@ import data from '../data.yaml';
 		<a
 			href="/mike-stankavich-resume.pdf"
 			target="_blank"
-			class="bg-accent-200 hover:shadow-background-tertiary/40 flex flex-row items-center justify-center gap-x-3 rounded-3xl px-4 py-2 text-sm transition-all hover:shadow-md dark:shadow-black/50 hover:dark:shadow-white/30"
+			class="hover:shadow-background-tertiary/40 flex flex-row items-center justify-center gap-x-3 rounded-3xl bg-accent-200 px-4 py-2 text-sm transition-all hover:shadow-md dark:shadow-black/50 hover:dark:shadow-white/30"
 		>
 			<!-- <span class="relative flex items-center justify-center">
 					<span

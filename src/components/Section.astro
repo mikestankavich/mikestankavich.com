@@ -1,14 +1,16 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from 'astro-icon/components';
 
-const { id, title } = Astro.props
+const { id, title } = Astro.props;
 ---
 
-<section id={id} class='anchor flex flex-col gap-y-5 py-5'>
-	<div class='text-xl font-semibold text-secondary-foreground flex flex-row items-center'>
-		<Icon name="round" class="text-accent-300" /><h1 class=" pl-2 font-bold" aria-label={title}>{title}</h1>
+<section id={id} class="anchor flex flex-col gap-y-5 py-5">
+	<div class="flex flex-row items-center text-xl font-semibold text-secondary-foreground">
+		<Icon name="round" class="text-accent-300" /><h1 class="pl-2 font-bold" aria-label={title}>
+			{title}
+		</h1>
 	</div>
-	<div class='flex flex-col gap-y-3'>
+	<div class="flex flex-col gap-y-3">
 		<slot />
 	</div>
 </section>

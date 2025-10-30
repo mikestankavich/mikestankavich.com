@@ -108,7 +108,7 @@ To change the theme colours of the site, edit the `src/styles/app.css` file.
 
 To change the fonts of the site, add your font files into `/public`, add it as a `@font-face` in the `src/styles/app.css` file, as a `fontFamily` in the `tailwind.config.js` file, and apply the new font class to the `main` tag in the `src/layouts/Base.astro` or `src/layouts/BaseBlog.astro` file.
 
-To change the background, edit the classes on the `body` tag in the `src/layouts/Base.astro` or `src/layouts/BaseBlog.astro` file. If you would like to add an image as the background, simple add it to the `/public/` folder and reference it on the `body` tag in the `src/layouts/Base.astro` or `src/layouts/BaseBlog.astro` file via tailwind classes. 
+To change the background, edit the classes on the `body` tag in the `src/layouts/Base.astro` or `src/layouts/BaseBlog.astro` file. If you would like to add an image as the background, simple add it to the `/public/` folder and reference it on the `body` tag in the `src/layouts/Base.astro` or `src/layouts/BaseBlog.astro` file via tailwind classes.
 
 ## 🚀 Getting started
 
@@ -132,4 +132,5 @@ If you find that something isn't working right then I'm always happy to hear it 
 3. [Starting a discussion](https://github.com/nicdun/astro-resume/discussions)
 
 ## ☕ Thank you!
+
 A big thank you to the creators of the awesome Astro static site generator :)

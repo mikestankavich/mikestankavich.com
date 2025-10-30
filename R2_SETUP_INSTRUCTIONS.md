@@ -61,5 +61,5 @@ rclone copy public/downloads/ cloudflare-r2:mikestankavich-downloads/downloads/
 ## Notes about R2 Directory Listing
 
 - The default directory listing is basic but functional
-- For a more customized appearance, you would need to set up a Worker 
+- For a more customized appearance, you would need to set up a Worker
 - The listing will display all files in the bucket under the path requested

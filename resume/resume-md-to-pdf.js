@@ -3,9 +3,9 @@ import path from 'path';
 import { readFile } from 'fs/promises';
 import { existsSync } from 'fs';
 
-const basePath = process.env.HOME ?
-  path.join(process.env.HOME, 'mikestankavich.com') :
-  path.resolve('./mikestankavich.com');
+const basePath = process.env.HOME
+	? path.join(process.env.HOME, 'mikestankavich.com')
+	: path.resolve('./mikestankavich.com');
 
 const basename = 'mike-stankavich-resume-pdo';
 const style = path.join(basePath, 'resume', 'resume-style.css');
@@ -21,45 +21,45 @@ const output = path.join(basePath, 'public', `${basename}.pdf`);
 // });
 
 async function convertToPdf() {
-  try {
-    const css = await readFile(style, 'utf-8');
+	try {
+		const css = await readFile(style, 'utf-8');
 
-    const pdf = await mdToPdf(
-      { path: input },
-      {
-        dest: output,
-        css,
-        launch_options: {
-          executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-          args: ['--no-sandbox']
-        },
-        pdf_options: {
-          format: 'Letter',
-          margin: {
-            top: '18mm',    
-            right: '18mm',   
-            bottom: '18mm',  
-            left: '18mm'    
-          },
-          printBackground: true,
-          scale: 1.0        // Ensure no scaling is applied
-        },
-        marked_options: {
-          headerIds: false,
-          mangle: false
-        }
-      }
-    );
+		const pdf = await mdToPdf(
+			{ path: input },
+			{
+				dest: output,
+				css,
+				launch_options: {
+					executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+					args: ['--no-sandbox']
+				},
+				pdf_options: {
+					format: 'Letter',
+					margin: {
+						top: '18mm',
+						right: '18mm',
+						bottom: '18mm',
+						left: '18mm'
+					},
+					printBackground: true,
+					scale: 1.0 // Ensure no scaling is applied
+				},
+				marked_options: {
+					headerIds: false,
+					mangle: false
+				}
+			}
+		);
 
-    if (pdf) {
-      console.log('PDF generated successfully at:', output);
-    }
-  } catch (error) {
-    console.error('Error generating PDF:', error);
-    if (error.stack) {
-      console.error('Stack trace:', error.stack);
-    }
-  }
+		if (pdf) {
+			console.log('PDF generated successfully at:', output);
+		}
+	} catch (error) {
+		console.error('Error generating PDF:', error);
+		if (error.stack) {
+			console.error('Stack trace:', error.stack);
+		}
+	}
 }
 
 convertToPdf();

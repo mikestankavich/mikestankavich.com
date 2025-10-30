@@ -15,7 +15,7 @@ const { class: className } = Astro.props;
 			<div>
 				<button
 					id="toggleDarkMode"
-					class="hover:bg-accent-300 bg-background-tertiary rounded-md border border-border p-1.5 transition-all md:mr-5"
+					class="rounded-md border border-border bg-background-tertiary p-1.5 transition-all hover:bg-accent-300 md:mr-5"
 				>
 					<span class="sr-only">Dark Theme</span>
 					<svg
@@ -43,7 +43,7 @@ const { class: className } = Astro.props;
 				</button>
 				<button
 					id="toggleMobileMenu"
-					class="hover:bg-accent-300 bg-background-tertiary top-5 rounded-md border border-border p-1.5 shadow-xl transition-all dark:shadow-black/50 md:hidden"
+					class="top-5 rounded-md border border-border bg-background-tertiary p-1.5 shadow-xl transition-all hover:bg-accent-300 dark:shadow-black/50 md:hidden"
 					x-on:click="open = !open"
 				>
 					<span class="sr-only">Menu</span>
@@ -65,93 +65,93 @@ const { class: className } = Astro.props;
 			x-collapse
 			x-show="open"
 			x-transition
-			class="bg-background-tertiary text-secondary-foreground mt-1.5 p-5 flex flex-grow flex-col items-center justify-between gap-4 rounded-xl md:hidden  shadow-xl dark:shadow-black/50"
+			class="mt-1.5 flex flex-grow flex-col items-center justify-between gap-4 rounded-xl bg-background-tertiary p-5 text-secondary-foreground shadow-xl dark:shadow-black/50 md:hidden"
 		>
 			<a
 				href="#"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="About"
 				>About
 			</a>
 			<a
 				href="#experience"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Experience"
 				>Experience
 			</a>
 			<a
 				href="#education"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Education"
 				>Education
 			</a>
 			<a
 				href="#projects"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Projects"
 				>Projects
 			</a>
 			<a
 				href="#skills"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Skills"
 				>Skills
 			</a>
 			<a
 				href="#tools"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Tools"
 				>Tools
 			</a>
 			<a
 				href="/blog"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Blog"
 				>Blog
 			</a>
 		</nav>
 		<div
-			class="bg-background-tertiary z-10 col-span-2 mb-5 hidden flex-row justify-between rounded-2xl border border-transparent p-5 text-secondary-foreground shadow-xl dark:shadow-black/50 md:flex"
+			class="z-10 col-span-2 mb-5 hidden flex-row justify-between rounded-2xl border border-transparent bg-background-tertiary p-5 text-secondary-foreground shadow-xl dark:shadow-black/50 md:flex"
 		>
 			<a
 				href="#"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Nav Menu Item"
 				>About
 			</a>
 			<a
 				href="#experience"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Experience"
 				>Experience
 			</a>
 			<a
 				href="#education"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Education"
 				>Education
 			</a>
 			<a
 				href="#projects"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Projects"
 				>Projects
 			</a>
 			<a
 				href="#skills"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Skills"
 				>Skills
 			</a>
 			<a
 				href="#tools"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Tools"
 				>Tools
 			</a>
 			<a
 				href="/blog"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+				class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 				aria-label="Blog"
 				>Blog
 			</a>

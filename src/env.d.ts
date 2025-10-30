@@ -2,6 +2,5 @@
 /// <reference path="../.astro/types.d.ts" />
 
 interface Window {
-    Alpine: import('alpinejs').Alpine;
-  }
-
+	Alpine: import('alpinejs').Alpine;
+}

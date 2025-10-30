@@ -1,13 +1,14 @@
 from linkedin jackson peak
+
 - Owner and principal engineer, delivering IT consulting services and developing custom applications for various clients
 - Led the design and build of SwiftID, a cloud-native RFID data collection platform, and architected microservices for a .NET-based SaaS application hosted on AWS
 - Created a cryptocurrency secure node hosting service and led an offshore team to develop an RFID geofencing app, highlighting my flexibility in handling diverse technological projects
-
 
 Senior Cloud Infrastructure Engineer
 Enigma Technologies, Inc. · ContractEnigma Technologies, Inc. · Contract
 Sep 2022 - Dec 2023 · 1 yr 4 mosSep 2022 to Dec 2023 · 1 yr 4 mos
 New York, New York, United States · RemoteNew York, New York, United States · Remote
+
 - Led the cloud infrastructure build and deployment for a key financial sanctions screening SaaS product, enhancing Go-To-Market (GTM) transformation efforts
 - Designed and maintained software release mechanisms across cloud and on-prem environments, significantly accelerating project timelines and ensuring strong security from design through deployment
 - Rearchitected GitLab CI/CD, enhanced developer workflows, and implemented DevSecOps practices
