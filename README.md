@@ -33,7 +33,7 @@ Explore the Astro.js Personal Blog Template – a sleek and feature-rich platfor
 
 ✨ **Syntax Highlighting**: Enhances code snippet readability for tech enthusiasts
 
-✨ **ESLint / Prettier**: pre-installed and pre-configured to keep your workflow simple
+✨ **Prettier**: pre-installed and pre-configured to keep your workflow simple
 
 ✨ **Vercel Deployment:** preconfigured Vercel deployment & web analytics
 
