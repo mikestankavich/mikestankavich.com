@@ -1,4 +1,4 @@
-# Feature: Code Quality Cleanup
+# Feature: Code Quality Cleanup and Linting Strategy
 
 ## Metadata
 
@@ -6,63 +6,79 @@
 
 ## Outcome
 
-Fix validation errors and establish consistent code formatting across the codebase.
+Establish consistent code formatting and full linting validation across the codebase.
 
 ## User Story
 
 As a developer
-I want all validation gates to pass cleanly
-So that the codebase maintains high quality standards and CSW workflow can function properly
+I want full linting validation restored and code formatting consistent
+So that future CSW specs can rely on working validation gates and the codebase maintains high quality standards
 
 ## Context
 
-During CSW bootstrap validation (PR #15), we ran the stack validation commands and discovered several code quality issues that were deferred to keep the CSW infrastructure PR focused and reviewable.
+During CSW bootstrap validation (PR #15), we ran the stack validation commands and discovered code quality issues. To keep the bootstrap PR focused on CSW infrastructure, we made minimal fixes and deferred full cleanup to this spec.
 
-**Issues Found:**
+**Fixed in PR #15:**
+- ✅ Card.astro syntax error (src/components/Card.astro:24-27) - Fixed malformed JSX
+- ✅ Temporary lint script - Only validates Card.astro to allow CSW bootstrap to ship
+- ✅ Documented deferral strategy in spec/stack.md
 
-1. **Card.astro Syntax Error**: Malformed JSX structure causing lint failures
-   - Location: `src/components/Card.astro:24-27`
-   - Error: `SyntaxError: Unexpected token, expected ":"`
-   - Root cause: Opening `<div>` immediately followed by closing `</div>` before content
+**Remaining Work:**
 
-2. **ESLint Configuration**: ESLint is referenced in package.json but not configured
-   - Current: `package.json` has `eslint` in lint script but no config file
-   - Multiple configuration attempts failed during bootstrap
-   - Decision needed: Add ESLint config or remove from lint script
+1. **Restore Full Linting**: Replace temporary lint script with full Prettier validation
+   - Current: `prettier --check "src/components/Card.astro"` (temporary)
+   - Target: `prettier --check "**/*.{js,jsx,ts,tsx,md,mdx,svelte,astro}" "!spec/**"`
 
-3. **Code Formatting**: Prettier formatting inconsistencies across ~65 files
-   - Running `pnpm run lint --write` would reformat many files
-   - Includes markdown files, TypeScript, Astro components, etc.
+2. **Apply Prettier Formatting**: ~64 files need formatting
+   - Markdown files (examples/, resume/, README files)
+   - TypeScript/Astro components throughout src/
+   - Configuration files
+
+3. **ESLint Decision**: Decide on linting strategy
+   - ESLint installed as dev dependency but not configured
+   - Option A: Keep Prettier-only (simpler)
+   - Option B: Add ESLint configuration (better static analysis)
 
 **Current Stack:**
 - TypeScript + Astro + Tailwind
-- Prettier (working)
-- ESLint (not configured, causing failures)
+- Prettier (working, but temporarily limited)
+- ESLint (installed but not configured)
 - Validation commands: `pnpm run lint`, `pnpm exec astro check`, `pnpm run build`
 
 ## Technical Requirements
 
-1. Fix Card.astro syntax error to resolve lint failures
-2. Make ESLint configuration decision:
-   - Option A: Keep Prettier-only (remove ESLint from lint script)
-   - Option B: Add minimal ESLint config for Astro + TypeScript
-3. Apply consistent Prettier formatting across codebase
-4. Verify all validation gates pass: lint, typecheck, build
+1. **Restore full lint script in package.json**:
+   - Replace: `prettier --check "src/components/Card.astro"` (temporary)
+   - With: `prettier --check "**/*.{js,jsx,ts,tsx,md,mdx,svelte,astro}" "!spec/**"`
+   - Excludes spec/ directory (contains code examples)
+
+2. **Apply Prettier formatting to ~64 files**:
+   - Run: `prettier --write "**/*.{js,jsx,ts,tsx,md,mdx,svelte,astro}" "!spec/**"`
+   - Affects: examples/, resume/, src/, config files
+
+3. **Make ESLint decision**:
+   - Option A: Keep Prettier-only (remove ESLint deps, simpler)
+   - Option B: Add ESLint config (better static analysis, more setup)
+
+4. **Update spec/stack.md**:
+   - Remove temporary notes about Card.astro-only validation
+   - Document final linting strategy
 
 ## Validation Criteria
 
-- [ ] `pnpm run lint` completes without errors
-- [ ] `pnpm exec astro check` shows 0 errors, 0 warnings
-- [ ] `pnpm run build` succeeds
-- [ ] Card.astro syntax error is fixed (src/components/Card.astro:24-27)
-- [ ] ESLint configuration decision is implemented consistently
+- [ ] Full lint script restored in package.json
+- [ ] `pnpm run lint` validates all files (not just Card.astro)
+- [ ] All Prettier formatting applied (~64 files formatted)
+- [ ] ESLint decision implemented consistently
+- [ ] spec/stack.md documents final linting approach
+- [ ] All validation gates pass: lint, typecheck, build
 
 ## Success Metrics
 
-- [ ] All validation commands pass cleanly
-- [ ] No syntax errors in codebase
+- [ ] Full linting validation works for future specs
 - [ ] Code formatting is consistent across all files
-- [ ] Future CSW specs can rely on working validation gates
+- [ ] Clear linting strategy documented for team
+- [ ] No temporary workarounds remaining in validation gates
 
 ## References
 

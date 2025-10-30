@@ -12,7 +12,7 @@
 pnpm run lint
 ```
 
-**Note**: Lint script runs Prettier only. ESLint was not configured in this project.
+**Note**: Currently validates only Card.astro (the file fixed in bootstrap). Full Prettier linting deferred to `spec/active/code-cleanup/` to keep bootstrap PR focused. ESLint was not configured in this project. When restored, the `spec/` directory should be excluded from linting since spec files may contain intentionally broken code examples.
 
 ## Typecheck
 
