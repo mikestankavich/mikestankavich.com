@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Development Workflow
+
+This project uses [Claude Spec Workflow](https://github.com/trakrf/claude-spec-workflow) for structured feature development. See `spec/README.md` for details.
+
 ## Project Overview
 
 This is a personal branding site for Mike Stankavich built with Astro.js. The project combines a resume/CV site with a blog platform, featuring both a tailored resume section and a content management system for blog posts.
@@ -26,11 +30,13 @@ This is a personal branding site for Mike Stankavich built with Astro.js. The pr
 
 ### Core Structure
 
-1. **Resume/CV Site**: 
+1. **Resume/CV Site**:
+
    - Main content source is `src/data.yaml` which contains all personal information including skills, work history, etc.
    - Resume section is built using Astro components that consume this YAML data
 
 2. **Blog Platform**:
+
    - Content lives in `src/content/post/` as Markdown files
    - Content schema is defined in `src/content/config.ts`
    - Supports tags, pagination, and other blog features
@@ -45,7 +51,7 @@ This is a personal branding site for Mike Stankavich built with Astro.js. The pr
 
 - `src/data.yaml`: Primary data source for the resume/CV
 - `src/site.config.ts`: Site-wide configuration including metadata
-- `src/components/`: Reusable Astro components 
+- `src/components/`: Reusable Astro components
   - `cv/`: Resume-specific components
   - `blog/`: Blog-specific components
   - `layout/`: Layout components (header, footer)
