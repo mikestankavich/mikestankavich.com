@@ -34,20 +34,19 @@ export type CvData = {
 	twitter: string;
 	location: string;
 	summary: string;
- 	experience: Content[];
+	experience: Content[];
 	education: Content[];
 	projects: Proj[];
 	skills: Record<string, string[]>[];
-	certifications: Cert[]; 
+	certifications: Cert[];
 };
-
 
 export type Content = {
 	title: string;
-    company: string;
-    location: string;
-    dateRange: string;
-    description: string[];
+	company: string;
+	location: string;
+	dateRange: string;
+	description: string[];
 };
 
 export type Proj = {
@@ -55,11 +54,11 @@ export type Proj = {
 	description: string;
 	href: string;
 	imagePath: string;
-}
+};
 
 export type Cert = {
 	issuer: string;
 	name: string;
 	issued: string;
 	href: string;
-}
+};

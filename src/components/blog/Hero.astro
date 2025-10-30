@@ -65,7 +65,12 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 			</svg>
 			{data.tags.map((tag, i) => (
 				<div>
-					<Button title={`#${tag}`} href={`/tags/${tag}/`} style="button" data-pagefind-filter="tag"></Button>
+					<Button
+						title={`#${tag}`}
+						href={`/tags/${tag}/`}
+						style="button"
+						data-pagefind-filter="tag"
+					/>
 					{i < data.tags.length - 1 && ', '}
 				</div>
 			))}

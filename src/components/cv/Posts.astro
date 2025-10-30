@@ -1,19 +1,22 @@
 ---
-import { sortMDByDate } from "@/utils";
-import Section from "../Section.astro";
-import PostPreview from "../blog/PostPreview.astro";
+import { sortMDByDate } from '@/utils';
+import Section from '../Section.astro';
+import PostPreview from '../blog/PostPreview.astro';
 
 const { posts } = Astro.props;
 
 const MAX_POSTS = 5;
 const allPostsByDate = sortMDByDate(posts).slice(0, MAX_POSTS);
 ---
+
 <Section title="Posts">
-    <ul class="flex flex-col gap-y-2">
-        {allPostsByDate.map((p) => (
-            <li class="flex flex-col gap-x-2 sm:flex-row">
-                <PostPreview post={p} />
-            </li>
-        ))}
-    </ul>
+	<ul class="flex flex-col gap-y-2">
+		{
+			allPostsByDate.map((p) => (
+				<li class="flex flex-col gap-x-2 sm:flex-row">
+					<PostPreview post={p} />
+				</li>
+			))
+		}
+	</ul>
 </Section>

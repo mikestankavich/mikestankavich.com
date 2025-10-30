@@ -2,10 +2,15 @@
 import { cn } from '@/utils';
 import { Icon } from 'astro-icon/components';
 
-const {icon, class: className, classIcon, href} = Astro.props;
+const { icon, class: className, classIcon, href } = Astro.props;
 ---
-<div class={cn(
-    className,
-    "shadow-sm p-2 rounded-lg flex items-center justify-center",
-    !href && 'cursor-default',
-)}><Icon class={classIcon} name={icon} /></div>
+
+<div
+	class={cn(
+		className,
+		'shadow-sm p-2 rounded-lg flex items-center justify-center',
+		!href && 'cursor-default'
+	)}
+>
+	<Icon class={classIcon} name={icon} />
+</div>

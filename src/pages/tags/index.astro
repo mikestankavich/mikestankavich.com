@@ -38,9 +38,7 @@ const meta = {
 				<ul class="flex flex-col gap-y-3">
 					{allTags.map(([tag, val]) => (
 						<li class="flex items-center gap-x-2 ">
-							<Button title={`#${tag}`} href={`/tags/${tag}/`} style="button">
-
-							</Button>
+							<Button title={`#${tag}`} href={`/tags/${tag}/`} style="button" />
 
 							<span class="inline-block">
 								- {val} post{val > 1 && 's'}

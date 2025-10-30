@@ -10,7 +10,7 @@ const { class: className } = Astro.props;
 		className,
 		'lg:max-w-7xl w-full md:fixed z-20 bg-background-tertiary text-secondary-foreground shadow-xl dark:shadow-black/50 border rounded-2xl border-none flex flex-col justify-center'
 	)}
-	 x-data="{ open: false }"
+	x-data="{ open: false }"
 >
 	<nav class="grid grid-cols-2 p-5 md:grid-cols-3" aria-label="global">
 		<a
@@ -23,13 +23,13 @@ const { class: className } = Astro.props;
 			<div class="z-10 hidden flex-row gap-5 pr-5 md:flex">
 				<a
 					href="/"
-					class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+					class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 					aria-label="About"
 					>About
 				</a>
 				<a
 					href="/blog"
-					class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
+					class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
 					aria-label="Blog"
 					>Blog
 				</a>
@@ -37,7 +37,7 @@ const { class: className } = Astro.props;
 			<div>
 				<button
 					id="toggleDarkMode"
-					class="hover:bg-accent-300 bg-background-tertiary rounded-md border border-border p-1.5 transition-all"
+					class="rounded-md border border-border bg-background-tertiary p-1.5 transition-all hover:bg-accent-300"
 				>
 					<span class="sr-only">Dark Theme</span>
 					<svg
@@ -65,7 +65,7 @@ const { class: className } = Astro.props;
 				</button>
 				<button
 					id="toggleMobileMenu"
-					class="hover:bg-accent-300 bg-background-tertiary top-5 rounded-md border border-border p-1.5 shadow-xl transition-all dark:shadow-black/50 md:hidden"
+					class="top-5 rounded-md border border-border bg-background-tertiary p-1.5 shadow-xl transition-all hover:bg-accent-300 dark:shadow-black/50 md:hidden"
 					x-on:click="open = !open"
 				>
 					<span class="sr-only">Menu</span>
@@ -82,28 +82,27 @@ const { class: className } = Astro.props;
 				</button>
 			</div>
 		</div>
-
 	</nav>
-			<nav
-			id="mobile_menu"
-			x-collapse
-			x-show="open"
-			x-transition
-			class="bg-background-tertiary mt-1.5 flex flex-grow flex-col items-center justify-between gap-4 rounded-xl p-5 text-secondary-foreground shadow-xl dark:shadow-black/50 md:hidden"
-		>
-			<a
-				href="/"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
-				aria-label="About"
-				>About
-			</a>
-			<a
-				href="/blog"
-				class="hover:text-accent-300 flex-none text-[1.05rem] font-medium"
-				aria-label="Blog"
-				>Blog
-			</a>
-		</nav>
+	<nav
+		id="mobile_menu"
+		x-collapse
+		x-show="open"
+		x-transition
+		class="mt-1.5 flex flex-grow flex-col items-center justify-between gap-4 rounded-xl bg-background-tertiary p-5 text-secondary-foreground shadow-xl dark:shadow-black/50 md:hidden"
+	>
+		<a
+			href="/"
+			class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
+			aria-label="About"
+			>About
+		</a>
+		<a
+			href="/blog"
+			class="flex-none text-[1.05rem] font-medium hover:text-accent-300"
+			aria-label="Blog"
+			>Blog
+		</a>
+	</nav>
 </header>
 
 <script>

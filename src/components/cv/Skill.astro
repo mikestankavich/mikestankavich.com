@@ -1,10 +1,13 @@
 ---
-import Section from "../Section.astro";
-import SkillLayout from "../SkillLayout.astro";
+import Section from '../Section.astro';
+import SkillLayout from '../SkillLayout.astro';
 import data from '../../data.yaml';
 ---
+
 <Section id="skills" title="Skills">
-    {Object.keys(data.skills).map((category: string) =>
-        <SkillLayout title={category} skills={data.skills[category]} />
-    )}
+	{
+		Object.keys(data.skills).map((category: string) => (
+			<SkillLayout title={category} skills={data.skills[category]} />
+		))
+	}
 </Section>
