@@ -11,7 +11,7 @@
       "pattern": "/downloads/*",
       "content": {
         "proxied": {
-          "origin": "mikestankavich-downloads.r2.dev"
+          "origin": "downloads.mikestankavich.com"
         }
       }
     }
